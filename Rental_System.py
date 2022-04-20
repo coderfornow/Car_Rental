@@ -95,7 +95,7 @@ class Fuel_Cars(Vehicle):
     """
     fuel_car class inheriting abstract class Vehicle
     """
-    vehicle_type = "Fuel_car"
+    vehicle_type = "Fuel Car"
 
     def __init__(self, number, model):
         """
@@ -149,7 +149,7 @@ class Inventory:
         """
         Add vehicle item in inventory
         """
-        if item.vehicle_type == "Fuel_car":
+        if item.vehicle_type == "Fuel Car":
             self.fuel.add(item)
         else:
             self.electric_car.add(item)
@@ -158,7 +158,7 @@ class Inventory:
         """
         Remove vehicle item from inventory
         """
-        if item.vehicle_type == "Fuel_car":
+        if item.vehicle_type == "Fuel Car":
             self.fuel.remove(item)
         else:
             self.electric_car.remove(item)
@@ -167,7 +167,7 @@ class Inventory:
         """
         Display the stocks in the inventory
         """
-        display(f"We currently have {len(self.fuel)} fuel_car and {len(self.electric_car)} electric_car", "PURPLE")
+        display(f"We currently have {len(self.fuel)} Fuel car and {len(self.electric_car)} Electric car", "PURPLE")
 
     def rent(self, customer, num_of_fuel_car=0, num_of_electric_car=0):
         """
@@ -204,6 +204,8 @@ class Inventory:
                 num_of_electric_car -= 1
                 self.del_item(electric1)
                 customer.vehicles.append(electric1)
+
+
             display("Request completed successully !", "CYAN")
             display("Enjoy the ride , Sir !", "BLUE")
             process_status = True
@@ -238,10 +240,10 @@ for model in Fuel_Models:
 random.shuffle(Electric_car)
 random.shuffle(Fuel_car)
 
-for electric in Electric_car:
-    shop.add_item(electric)
-for fuel in Fuel_car:
-    shop.add_item(fuel)
+for electric1 in Electric_car:
+    shop.add_item(electric1)
+for fuel1 in Fuel_car:
+    shop.add_item(fuel1)
 
 
 class Customer:
@@ -290,9 +292,9 @@ class Customer:
         display(f" Total Amount =  Rs. {self.bill}", "PURPLE")
         for vehicle in self.vehicles.copy():
             if vehicle.vehicle_type == "Fuel_car":
-                shop.Fuel_car.add(vehicle)
+                shop.fuel.add(vehicle)
             else:
-                shop.Electric_car.add(vehicle)
+                shop.electric_car.add(vehicle)
 
             self.vehicles.remove(vehicle)
         display("Returned vehicles successfully !", "CYAN")
