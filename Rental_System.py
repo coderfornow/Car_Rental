@@ -72,7 +72,7 @@ Fuel_Models = {"Mahindra Thar": 300, "Honda Amaze": 500, "Hyundai Verna": 1000}
 
 class Electric_Cars(Vehicle):
     """
-    Car class inheriting abstract class Vehicle
+   Electric Car class inheriting abstract class Vehicle
     """
     vehicle_type = "Electric Car"
 
@@ -139,7 +139,7 @@ class Inventory:
 
     def __init__(self):
         """
-        Constructor to initialize the inventory object with emmpty sets of vehicles
+        Constructor to initialize the inventory object with empty sets of vehicles
         """
         # set is used here so, adding and removing complexity is O(1)
         self.fuel = set()
@@ -187,8 +187,8 @@ class Inventory:
                     "PURPLE")
 
         else:
-            # Replace """ datetime(2021,3,10) with datetime.now() """  in production mode
-            customer.rental_time = datetime(2021, 3, 10)
+
+            customer.rental_time = datetime(2022,4,29)
 
             # Iterating over copy bcs the set is changed in the iteration
             for fuel1 in self.fuel.copy():
